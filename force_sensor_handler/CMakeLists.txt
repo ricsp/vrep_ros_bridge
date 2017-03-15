@@ -9,7 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   cmake_modules
   vrep_ros_plugin
-  
+
 )
 
 find_package(Eigen3)
@@ -93,7 +93,7 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS roscpp geometry_msgs vrep_ros_plugin 
-  DEPENDS eigen
+  DEPENDS Eigen
 )
 
 ###########

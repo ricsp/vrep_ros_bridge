@@ -100,7 +100,7 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES v_repExtRosBridge
   CATKIN_DEPENDS roscpp pluginlib
-  DEPENDS eigen
+  DEPENDS Eigen
 )
 
 ###########
@@ -143,7 +143,7 @@ foreach(MODEL_FILE ${MODEL_FILES_SRC})
   list(APPEND MODEL_FILES_DST "${VREP_ROOT_DIR}/${MODEL_FILE}")
   add_custom_command(OUTPUT "${VREP_ROOT_DIR}/${MODEL_FILE}"
 	  COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/${MODEL_FILE} ${VREP_ROOT_DIR}/${MODEL_FILE}
-	  DEPENDS ${MODEL_FILE} 
+	  DEPENDS ${MODEL_FILE}
     COMMENT "Copying model file ${MODEL_FILE_NAME}")
 endforeach(MODEL_FILE)
 add_custom_target(copy_models DEPENDS ${MODEL_FILES_DST})
